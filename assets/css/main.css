@@ -10,6 +10,8 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding: 10vh;
 }
 
 body {
@@ -77,9 +79,30 @@ a {
   min-height: 10vh;
 }
 
+.nav-scroll {
+  -webkit-box-shadow: 0px 20px 25px -17px rgba(30, 30, 60, 0.671), 0px 20px 65px -27px rgba(30, 30, 60, 0.39);
+          box-shadow: 0px 20px 25px -17px rgba(30, 30, 60, 0.671), 0px 20px 65px -27px rgba(30, 30, 60, 0.39);
+  background: #48286be1;
+}
+
+@supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+  .nav-scroll {
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+}
+
 #nav a {
   color: #F4F4F4;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+#nav a:hover {
+  color: #DC96BA;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
 }
 
 #nav .navbar-toggler {
@@ -99,7 +122,16 @@ a {
   background: #7D4B8A;
   padding: 0.9rem 1.2rem;
   border-radius: 5px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
   margin: 0.5rem 0rem !important;
+}
+
+#nav .kolo:hover {
+  background: #ff7f07;
+  color: #F4F4F4;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 #nav .dropdown .dropdown-menu {
@@ -118,157 +150,6 @@ a {
   display: -ms-flexbox;
   display: flex;
   place-items: center;
-}
-
-#HeroCarouse {
-  height: 100vh;
-  width: 100%;
-  background-color: #F4F4F4;
-  position: relative;
-}
-
-#HeroCarouse .carousel {
-  width: 100%;
-  height: 100%;
-}
-
-#HeroCarouse .carousel .carousel-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-#HeroCarouse .carousel .carousel-inner .carousel-item {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: red;
-}
-
-#HeroCarouse .slide-1 {
-  background: url("../img/1-min.png") no-repeat center center/cover;
-  height: 100vh;
-  width: 100%;
-}
-
-@media screen and (max-width: 500px) {
-  #HeroCarouse .slide-1 {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("../img/1-min.png") no-repeat center center/cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/1-min.png") no-repeat center center/cover;
-  }
-}
-
-#HeroCarouse .slide-2 {
-  background: url("../img/pexels-joslyn-pickens-3833052-min.png") no-repeat center center/cover;
-  height: 100vh;
-  width: 100%;
-}
-
-@media screen and (max-width: 500px) {
-  #HeroCarouse .slide-2 {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("../img/pexels-joslyn-pickens-3833052-min.png") no-repeat center center/cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/pexels-joslyn-pickens-3833052-min.png") no-repeat center center/cover;
-  }
-}
-
-#HeroCarouse .slide-3 {
-  background: url("../img/slide-3.png") no-repeat top center/cover;
-  height: 100vh;
-  width: 100%;
-}
-
-@media screen and (max-width: 500px) {
-  #HeroCarouse .slide-3 {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("../img/slide-3.png") no-repeat center center/cover;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/slide-3.png") no-repeat center center/cover;
-  }
-}
-
-#HeroCarouse .carousel-control-prev {
-  z-index: 20;
-}
-
-#HeroCarouse .carousel-control-next {
-  z-index: 20;
-}
-
-#HeroCarouse .carousel-caption {
-  color: #F4F4F4;
-}
-
-@media screen and (max-width: 500px) {
-  #HeroCarouse .carousel-caption {
-    color: #F4F4F4;
-  }
-}
-
-#HeroCarouse .carousel-caption h2 {
-  font-size: 10rem;
-  font-weight: bold;
-}
-
-#HeroCarouse .carousel-caption h5 {
-  font-size: 2.2rem;
-}
-
-#HeroCarouse .carousel-caption .span {
-  color: #48286B;
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-#HeroCarouse .carousel-caption .hero-btn {
-  background-color: #7D4B8A;
-  color: #F4F4F4;
-  padding: 1rem 2rem;
-  margin-top: 2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-#HeroCarouse .carousel-caption .hero-btn:hover {
-  background-color: #48286B;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-#HeroCarouse .up {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  position: absolute;
-  top: 0%;
-  left: 10%;
-  width: auto;
-}
-
-#HeroCarouse .glass {
-  width: 50%;
-  height: 100vh;
-  background-color: #dc96ba63;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-}
-
-@media screen and (max-width: 500px) {
-  #HeroCarouse .glass {
-    display: none;
-  }
 }
 
 #HeroCarousel {
@@ -314,6 +195,12 @@ a {
   background: url("../img/slide-3.png") no-repeat top center/cover;
 }
 
+@media (max-width: 500px) {
+  #HeroCarousel .carousel-inner .carousel-item:nth-child(3) {
+    background: url("../img/slide-3.png") no-repeat top right/cover;
+  }
+}
+
 #HeroCarousel .carousel-inner .carousel-item .caption {
   color: #F4F4F4;
   position: absolute;
@@ -330,9 +217,13 @@ a {
 }
 
 #HeroCarousel .carousel-inner .carousel-item .caption h1 {
-  font-size: 5em;
+  font-size: 6rem;
   font-weight: bolder;
-  line-height: 6rem;
+  line-height: 7rem;
+}
+
+#HeroCarousel .carousel-inner .carousel-item .caption h2 {
+  font-size: 2.1rem;
 }
 
 #HeroCarousel .carousel-inner .carousel-item .caption .cta {
@@ -342,6 +233,12 @@ a {
   margin-top: 1rem;
   border: none;
   border-radius: 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#HeroCarousel .carousel-inner .carousel-item .caption .cta:hover {
+  background-color: #48286B;
 }
 
 #HeroCarousel .carousel-inner .carousel-item .caption .cta a {
@@ -380,7 +277,7 @@ a {
 }
 
 #about-us {
-  min-height: 90vh;
+  min-height: 100%;
   background: url("../img/abt-us-bg.png") no-repeat center center/cover;
 }
 
@@ -408,7 +305,7 @@ a {
 
 #about-us .inner p {
   color: #575757;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
 }
 
 #about-us .inner a {
@@ -418,7 +315,7 @@ a {
 
 #about-us .inner .img-contain {
   width: 50vw;
-  height: 50vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -433,6 +330,9 @@ a {
 #about-us .inner .img-contain img {
   width: 100%;
   height: auto;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 20px 25px -17px rgba(30, 30, 60, 0.39), 0px 20px 65px -27px rgba(30, 30, 60, 0.39);
+          box-shadow: 0px 20px 25px -17px rgba(30, 30, 60, 0.39), 0px 20px 65px -27px rgba(30, 30, 60, 0.39);
 }
 
 #service {
@@ -1019,6 +919,13 @@ a {
 @media (max-width: 500px) {
   html {
     font-size: 50%;
+  }
+  .mynav {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  #nav a {
+    font-size: 1.5rem;
   }
   #hero .up {
     -webkit-box-align: center;
