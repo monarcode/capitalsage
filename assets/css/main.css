@@ -75,7 +75,7 @@ a {
 
 .mynav {
   background: #48286B;
-  padding: 2rem;
+  padding: 1.4rem;
   min-height: 10vh;
 }
 
@@ -143,8 +143,7 @@ a {
 }
 
 #nav .nav-item {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 1rem 1rem;
   text-align: right;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -923,9 +922,14 @@ a {
   .mynav {
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    min-height: auto;
+    padding: 2rem;
   }
   #nav a {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+  #nav .nav-item {
+    margin: 0.8rem 0;
   }
   #hero .up {
     -webkit-box-align: center;

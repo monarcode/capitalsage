@@ -65,8 +65,9 @@ a {
 
 .mynav {
     background: $primary-1;
-    padding: 2rem;
+    padding: 1.4rem;
     min-height: 10vh;
+    // min-height: calc(10vh / 10%);
 }
 
 .nav-scroll {
@@ -131,8 +132,7 @@ a {
     }
 
     .nav-item {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin: 1rem 1rem;
         text-align: right;
         display: flex;
         place-items: center;
@@ -789,11 +789,17 @@ a {
     .mynav {
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
+        min-height: auto;
+        padding: 2rem;
     }
 
     #nav {
         a {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
+        }
+
+        .nav-item {
+            margin: 0.8rem 0;
         }
     }
 
