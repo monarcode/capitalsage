@@ -328,15 +328,16 @@ a {
 
 #featured {
     background-color: #fff;
-    max-height: 10vh;
+    min-height: 10vh;
     padding: 2rem;
 
     .img-cont {
         display: flex;
         justify-content: space-evenly;
+        filter: opacity(0.4);
 
         img {
-            width: 12rem;
+            width: 10rem;
             height: auto;
         }
     }
@@ -375,12 +376,25 @@ a {
 
         p {
             color: #575757;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
 
         a {
             color: $primary-2;
             font-weight: 500;
+        }
+
+        .img-contain {
+            width: 50vw;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
 }
@@ -901,6 +915,13 @@ a {
         .carousel-inner::before {
             width: 100%;
             background-color: rgba(0, 0, 0, 0.651);
+        }
+
+        @supports (backdrop-filter: blur()){
+            .carousel-inner::before {
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(2px);
+            }    
         }
     }
 

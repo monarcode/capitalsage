@@ -359,7 +359,7 @@ a {
 
 #featured {
   background-color: #fff;
-  max-height: 10vh;
+  min-height: 10vh;
   padding: 2rem;
 }
 
@@ -370,10 +370,12 @@ a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-filter: opacity(0.4);
+          filter: opacity(0.4);
 }
 
 #featured .img-cont img {
-  width: 12rem;
+  width: 10rem;
   height: auto;
 }
 
@@ -406,12 +408,31 @@ a {
 
 #about-us .inner p {
   color: #575757;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 #about-us .inner a {
   color: #7D4B8A;
   font-weight: 500;
+}
+
+#about-us .inner .img-contain {
+  width: 50vw;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about-us .inner .img-contain img {
+  width: 100%;
+  height: auto;
 }
 
 #service {
@@ -1024,6 +1045,13 @@ a {
   #HeroCarousel .carousel-inner::before {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.651);
+  }
+  @supports ((-webkit-backdrop-filter: blur()) or (backdrop-filter: blur())) {
+    #HeroCarousel .carousel-inner::before {
+      background: rgba(0, 0, 0, 0.5);
+      -webkit-backdrop-filter: blur(2px);
+              backdrop-filter: blur(2px);
+    }
   }
   #about-us .inner {
     padding: 2rem 1rem;
