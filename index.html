@@ -12,9 +12,17 @@
     <title>CreditAssist NG</title>
 </head>
 
-<body>
+<body class="no-scroll">
+    <!-- page loader -->
+    <div class="loader-wrapper">
+        <div class="loader">
+            <span class="loader-inner"></span>
+        </div>
+    </div>
+    <!-- page loader end -->
+
     <!-- nav start -->
-    <nav id="nav" class="navbar navbar-expand-lg mynav fixed-top nav-scroll">
+    <nav id="nav" class="navbar navbar-expand-lg mynav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Credit<span>Assist</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
@@ -535,20 +543,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
+    <script src="./assets/js/app.js"></script>
 
     <script>
-        AOS.init();
+        window.addEventListener("load", function () {
+            const pageLoader = document.querySelector(".loader-wrapper");
+            const body = document.querySelector('body');
+            pageLoader.className += " hide";
+            body.classList.remove('no-scroll');
 
-        $(document).ready(function () {
+        })
 
+        window.addEventListener('scroll', function () {
+            let navb = document.querySelector('nav');
+            let koloBtn = document.querySelector('.kolo');
+            let windowPosition = window.scrollY > 100;
 
-            $('.carousel').carousel();
-
-            $(window).scroll(function () {
-                let scr = $(window).scrollTop();
-
-                $('#nav').toggleClass('nav-scroll', src>20);
-            })
+            navb.classList.toggle('nav-scroll', windowPosition);
+            koloBtn.classList.toggle('kolo-white', windowPosition);
         })
     </script>
 
