@@ -19,6 +19,7 @@ body {
   font-size: 1.6rem;
   width: 100%;
   background-color: #F4F4F4;
+  max-height: 100%;
 }
 
 a {
@@ -249,6 +250,8 @@ a {
   width: 100%;
   position: relative;
   background: url("../img/slide-1.png") no-repeat center center/cover;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #HeroCarousel .carousel-inner .carousel-item:nth-child(2) {
@@ -256,12 +259,12 @@ a {
 }
 
 #HeroCarousel .carousel-inner .carousel-item:nth-child(3) {
-  background: url("../img/slide-3.png") no-repeat top center/cover;
+  background: url("../img/slide-33.jpg") no-repeat top center/cover;
 }
 
 @media (max-width: 500px) {
   #HeroCarousel .carousel-inner .carousel-item:nth-child(3) {
-    background: url("../img/slide-3.png") no-repeat top right/cover;
+    background: url("../img/slide-33.jpg") no-repeat top right/cover;
   }
 }
 
